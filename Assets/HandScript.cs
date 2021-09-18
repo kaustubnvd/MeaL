@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.MagicLeap;
-
+// Code adapted from Magic Leap Docs: 
 public class HandScript : MonoBehaviour
 {
     public enum HandPoses { Ok, Finger, Thumb, OpenHand, Fist, NoPose };
