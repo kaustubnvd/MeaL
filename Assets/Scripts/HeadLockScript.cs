@@ -1,3 +1,4 @@
+// Code from: https://developer.magicleap.com/en-us/learn/guides/unity-overview
 using System;
 using UnityEngine;
 using UnityEngine.XR.MagicLeap;
