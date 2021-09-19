@@ -673,7 +673,7 @@ PlayerSettings:
     m_ModelFolderPath: 
     m_PortalFolderPath: 
   luminCert:
-    m_CertPath: /Users/kaustub/Downloads/privatekey/meal.cert
+    m_CertPath: /Users/shikh/OneDrive/Documents/PinnacleApp/pinnacle.cert
     m_SignPackage: 1
   luminIsChannelApp: 0
   luminVersion:
