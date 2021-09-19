@@ -12,7 +12,7 @@ public class TextChange : MonoBehaviour {
   private const float _triggerThreshold = 0.2f;
   private bool _triggerPressed = false;
   private bool _bumperPressed = false;
-  private string[] steps = {"PB & J", "Ingredients: Peanute Buttere, Jelly, Bread", "Toast Bread", "Spread Peanut Butter on one slice", "Spread Jelly on other slice", "Close and done"};
+  private string[] steps = {"PB & J", "Ingredients: Peanut Butter, Jelly, Bread", "Toast Bread", "Spread Peanut Butter on one slice", "Spread Jelly on other slice", "Close and done"};
   private int index;
   private MLInput.Controller _control;
   #endregion
@@ -61,14 +61,14 @@ public class TextChange : MonoBehaviour {
     MLInput.OnControllerButtonDown -= OnButtonDown;
   }
   
-  private void incrementStep() {
+  public void incrementStep() {
   if (index < steps.Length) {
       index += 1;
       textMesh.text = "(" + index + ") " + steps[index];
     }
   }
 
-  private void decrementStep() {
+  public void decrementStep() {
     if (index > 0) {
       index -= 1;
       if (index == 0)

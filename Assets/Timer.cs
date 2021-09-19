@@ -22,33 +22,39 @@ public class Timer : MonoBehaviour {
     // Setup and Start Magic Leap input and add a button event (will be used for the HomeTap)
     //_control = MLInput.GetController(MLInput.Hand.Left);
     ResetTimer();
-    secondsLeft = 60;
-    StartTimer();
   }
 
-  private void ResetTimer() {
+  public void ResetTimer() {
       timerText.color = new Color(255, 255, 255);
       timerStarted = false;
       secondsLeft = 0;
   }
 
-  private void StartTimer() {
-      timerStarted = true;
+  public void StartTimer() {
+      if (secondsLeft != 0) {
+        timerStarted = true;
+      }
   }
 
-  private void StopTimer() {
-      timerStarted = false;
+  public void StopTimer() {
+      if (secondsLeft != 0) {
+        timerStarted = false;
+      }
   }
 
-  private void IncrementSeconds() {
-      secondsLeft += 10;
+  public void IncrementSeconds() {
+      if (!timerStarted) {
+        secondsLeft += 10;
+      }
   }
 
-  private void DecrementSeconds() {
-      secondsLeft -= 10;
+  public void DecrementSeconds() {
+      if (secondsLeft >= 10 && !timerStarted) {
+        secondsLeft -= 10;
+      }
   }
 
-  private void Update() {
+  public void Update() {
     if (timerStarted) {
         if (secondsLeft > 0)
             secondsLeft -= Time.deltaTime;
