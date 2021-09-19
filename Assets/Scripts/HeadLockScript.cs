@@ -9,7 +9,7 @@ public class HeadLockScript : MonoBehaviour {
   #endregion
   
   #region Private Variables
-  private const float _distance = 1.5f;
+  private const float _distance = 0.5f;
   #endregion
   
   #region Public Methods
@@ -17,12 +17,11 @@ public class HeadLockScript : MonoBehaviour {
     obj.transform.position = Camera.transform.position + Camera.transform.forward * _distance;
     obj.transform.rotation = Camera.transform.rotation;
   }
-  public void HeadLock(GameObject obj, float speed, float offsetX, float offsetY) {	
-    Vector3 newPos = new Vector3(Camera.transform.position.x + offsetX, Camera.transform.position.y + offsetY, Camera.transform.position.z);
+  public void HeadLock(GameObject obj, float speed) {	
     speed = Time.deltaTime * speed;
-    Vector3 posTo = newPos + (Camera.transform.forward * _distance);
+    Vector3 posTo = Camera.transform.position + (Camera.transform.forward * _distance);
     obj.transform.position = Vector3.SlerpUnclamped(obj.transform.position, posTo, speed);
-    Quaternion rotTo = Quaternion.LookRotation(obj.transform.position - newPos);
+    Quaternion rotTo = Quaternion.LookRotation(obj.transform.position - Camera.transform.position);
     obj.transform.rotation = Quaternion.Slerp(obj.transform.rotation, rotTo, speed);	
   }
   #endregion

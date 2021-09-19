@@ -23,7 +23,7 @@ public class Control : MonoBehaviour {
 
   }
   private void Update() {
-    _headlock.HeadLock(WorldCanvas, 5.0f, -0.25f, 0.2f);
+    _headlock.HeadLock(WorldCanvas, 6.0f);
   }
   #endregion
 }
